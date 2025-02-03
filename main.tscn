@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://dlrh8ebhkxs1x"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_x02f4"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_x02f4")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -379.0
+offset_top = -223.0
+offset_right = 413.0
+offset_bottom = 207.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 100
+text = "THIS IS A LABEL"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = -1
+anchor_left = 0.498
+anchor_top = 0.252
+anchor_right = 0.498
+anchor_bottom = 0.252
+offset_left = -109.696
+offset_top = -40.296
+offset_right = 110.304
+offset_bottom = 40.704
+grow_vertical = 2
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
