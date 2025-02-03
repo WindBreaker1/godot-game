@@ -1,7 +1,12 @@
 extends Node
 
-@export var points = 0
+@export var points = 0 
 var randomNumber = randi_range(1, 100)
+
+# make sure health doesn't go above 100 or below 0
+var health := 100:
+	set(value):
+		health = clamp(value, 0, 100)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
