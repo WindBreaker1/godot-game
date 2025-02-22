@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://dlrh8ebhkxs1x"]
+[gd_scene load_steps=6 format=3 uid="uid://dlrh8ebhkxs1x"]
 
-[ext_resource type="Script" path="res://main.gd" id="1_x02f4"]
-[ext_resource type="Script" path="res://character.gd" id="2_gbv6f"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_ai4c1"]
+[ext_resource type="Script" path="res://scripts/character.gd" id="2_jbid5"]
+[ext_resource type="AudioStream" uid="uid://c5uggma82eq01" path="res://assets/music/lazy-day-stylish-futuristic-chill.mp3" id="3_b8rur"]
+[ext_resource type="PackedScene" uid="uid://cl3q2vbh3ff1s" path="res://scenes/player.tscn" id="4_s8wc7"]
 
 [sub_resource type="Theme" id="Theme_11m0j"]
 
 [node name="Main" type="Node"]
-script = ExtResource("1_x02f4")
+script = ExtResource("1_ai4c1")
 
 [node name="Label" type="Label" parent="."]
 anchors_preset = 8
@@ -14,14 +16,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -379.0
-offset_top = -223.0
-offset_right = 413.0
-offset_bottom = 207.0
+offset_left = -706.0
+offset_top = -453.0
+offset_right = 86.0
+offset_bottom = -23.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 8
-theme_override_font_sizes/font_size = 100
+theme_override_font_sizes/font_size = 50
 text = "THIS IS A LABEL"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -32,10 +34,10 @@ anchor_left = 0.498
 anchor_top = 0.252
 anchor_right = 0.498
 anchor_bottom = 0.252
-offset_left = -109.696
-offset_top = -40.296
-offset_right = 110.304
-offset_bottom = 40.704
+offset_left = 293.304
+offset_top = -116.296
+offset_right = 513.304
+offset_bottom = -35.296
 grow_vertical = 2
 tooltip_text = "Click to get points!"
 mouse_default_cursor_shape = 2
@@ -49,8 +51,17 @@ text = "Click me"
 autostart = true
 
 [node name="Character" type="Node" parent="."]
-script = ExtResource("2_gbv6f")
+script = ExtResource("2_jbid5")
+username = "Andrei"
 profession = "Knight"
 health = 50
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_b8rur")
+volume_db = -10.0
+autoplay = true
+
+[node name="Player" parent="." instance=ExtResource("4_s8wc7")]
+position = Vector2(40, 399)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl3q2vbh3ff1s"]
+
+[ext_resource type="Texture2D" uid="uid://r47emjii2a6o" path="res://assets/spites/main-char.png" id="1_5gjt1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3hw6w"]
+size = Vector2(40, 81)
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(50, 50)
+texture = ExtResource("1_5gjt1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(50, 49.5)
+shape = SubResource("RectangleShape2D_3hw6w")
+debug_color = Color(1.73271e-06, 0.601717, 0.689997, 0.42)

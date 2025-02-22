@@ -2,6 +2,7 @@ class_name Character
 
 extends Node
 
+@export var username: String
 @export var profession : String
 @export var health: int
 
